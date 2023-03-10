@@ -12,7 +12,7 @@
 
     <br />
 
-    <asp:ListBox ID="ForecastList" runat="server" Height="350px" Width="100%"></asp:ListBox>
+    <asp:ListBox ID="ForecastList" runat="server" Height="350px" Width="400px"></asp:ListBox>
 
     <br />
     

@@ -1,0 +1,14 @@
+.custom-gradient-bg {
+    background: rgb(0,7,203);
+    background: -moz-linear-gradient(90deg, rgba(0,7,203,1) 0%, rgba(48,175,190,1) 50%, rgba(0,195,13,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,7,203,1) 0%, rgba(48,175,190,1) 50%, rgba(0,195,13,1) 100%);
+    background: linear-gradient(90deg, rgba(0,7,203,1) 0%, rgba(48,175,190,1) 50%, rgba(0,195,13,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0007cb",endColorstr="#00c30d",GradientType=1);
+}
+
+.custom-image-bg {
+    background-image: url('Content/sky.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
