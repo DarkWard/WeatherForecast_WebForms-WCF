@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using Weather_Forecast_Models;
 
-namespace Web_Forms_Weather_Forecast.APISimulation.ForecastGenerator
+namespace WCF_Service_Weather_Forecast
 {
-    public class Generator
+    public class ForecastGenerationService : IForecastGenerationService
     {
-        public static List<WeatherForecastViewModel> GenerateForecast(int numberOfDays)
+        public List<WeatherForecastViewModel> GenerateForecast(int numberOfDays)
         {
             var result = new List<WeatherForecastViewModel>();
             var random = new Random();
@@ -28,7 +28,7 @@ namespace Web_Forms_Weather_Forecast.APISimulation.ForecastGenerator
             return result;
         }
 
-        public static string GenerateFeeling(double temperature)
+        private static string GenerateFeeling(double temperature)
         {
             if (temperature < -10)
             {
@@ -46,10 +46,7 @@ namespace Web_Forms_Weather_Forecast.APISimulation.ForecastGenerator
             {
                 return "Warm";
             }
-            else
-            {
-                return "Hot";
-            }
+            return "Hot";
         }
     }
 }

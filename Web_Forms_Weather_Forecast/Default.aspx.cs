@@ -1,6 +1,6 @@
-﻿using Web_Forms_Weather_Forecast.APISimulation.ForecastGenerator;
-using System;
+﻿using System;
 using System.Web.UI;
+using Web_Forms_Weather_Forecast.ForecastGenerator;
 
 namespace Web_Forms_Weather_Forecast
 {
@@ -9,14 +9,19 @@ namespace Web_Forms_Weather_Forecast
         protected void GetOneDayForecast(object sender, EventArgs e)
         {
             ForecastList.Items.Clear();
-            var forecast = Generator.GenerateForecast(1);
+
+            var forecastClient = new ForecastGenerationServiceClient();
+            var forecast = forecastClient.GenerateForecast(1);
+
             ForecastList.Items.Add($"Temperature: {forecast[0].Temperature}\tFeels {forecast[0].Feelings}\n");
         }
 
         protected void GetSevenDayForecast(object sender, EventArgs e)
         {
             ForecastList.Items.Clear();
-            var forecast = Generator.GenerateForecast(7);
+
+            var forecastClient = new ForecastGenerationServiceClient();
+            var forecast = forecastClient.GenerateForecast(7);
 
             foreach (var item in forecast)
             {
@@ -27,7 +32,9 @@ namespace Web_Forms_Weather_Forecast
         protected void GetThirtyDaysDayForecast(object sender, EventArgs e)
         {
             ForecastList.Items.Clear();
-            var forecast = Generator.GenerateForecast(30);
+
+            var forecastClient = new ForecastGenerationServiceClient();
+            var forecast = forecastClient.GenerateForecast(30);
 
             foreach (var item in forecast)
             {

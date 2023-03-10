@@ -1,4 +1,4 @@
-﻿namespace Web_Forms_Weather_Forecast.APISimulation.Models
+﻿namespace Weather_Forecast_Models
 {
     public class WeatherForecastViewModel
     {

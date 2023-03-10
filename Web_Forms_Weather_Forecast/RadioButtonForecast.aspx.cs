@@ -1,7 +1,9 @@
-﻿using Web_Forms_Weather_Forecast.APISimulation.ForecastGenerator;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Web_Forms_Weather_Forecast.APISimulation.Models;
+using System.Linq;
+using Weather_Forecast_Models;
+using Web_Forms_Weather_Forecast.APISimulation.ForecastGenerator;
+using Web_Forms_Weather_Forecast.ForecastGenerator;
 
 namespace Web_Forms_Weather_Forecast
 {
@@ -14,7 +16,8 @@ namespace Web_Forms_Weather_Forecast
             var days = int.Parse(RBList.SelectedValue);
             var includeFeelings = ChBFeelings.Checked;
 
-            var forecast = Generator.GenerateForecast(days);
+            var forecastClient = new ForecastGenerationServiceClient();
+            var forecast = forecastClient.GenerateForecast(days).ToList();
 
             switch (includeFeelings)
             {
